@@ -91,18 +91,36 @@ h1 { margin: 0; font-size: clamp(34px, 7vw, 58px); line-height: 1.04; letter-spa
 .class-meta strong { color: white; }
 .lesson-list { margin: 0; padding: 8px 24px 18px; list-style: none; counter-reset: lesson; }
 .lesson {
-  min-height: 70px; display: grid; grid-template-columns: 52px 1fr auto; align-items: center; gap: 16px;
+  min-height: 76px; display: grid; grid-template-columns: 52px 1fr auto; align-items: center; gap: 16px;
   border-bottom: 1px solid var(--line);
 }
 .lesson:last-child { border-bottom: 0; }
 .lesson-number { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 12px; color: var(--green-800); background: var(--green-100); font-weight: 850; }
 .lesson-subject { font-size: 16px; font-weight: 750; }
 .lesson-free { color: #9aa6a1; font-weight: 600; }
-.lesson-badge { padding: 6px 9px; border-radius: 9px; color: var(--muted); background: var(--mint); font-size: 10px; font-weight: 750; }
+.lesson-time { min-width: 118px; text-align: right; }
+.lesson-time strong, .lesson-time small { display: block; }
+.lesson-time strong { color: var(--green-950); font-size: 14px; }
+.lesson-time small { margin-top: 4px; color: var(--muted); font-size: 10px; font-weight: 700; }
 .empty-state { padding: 48px 24px; text-align: center; color: var(--muted); }
 .empty-state span { width: 48px; height: 48px; margin: 0 auto 12px; display: grid; place-items: center; border-radius: 50%; color: var(--green-800); background: var(--green-100); font-size: 24px; }
 .empty-state strong { display: block; color: var(--ink); }
 .source-note { max-width: 720px; margin: 24px auto 50px; color: var(--muted); font-size: 12px; line-height: 1.65; text-align: center; }
+.bell-panel { margin: 30px 0 24px; padding: 26px; border: 1px solid var(--line); border-radius: 26px; background: var(--white); box-shadow: var(--shadow); }
+.section-heading { margin-bottom: 20px; }
+.section-heading .eyebrow { margin-bottom: 8px; }
+.section-heading h2 { margin: 0; font-size: 28px; letter-spacing: -.025em; }
+.section-heading > p:last-child { margin: 8px 0 0; color: var(--muted); font-size: 13px; }
+.bell-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.bell-card { overflow: hidden; border: 1px solid var(--line); border-radius: 18px; transition: .2s; }
+.bell-card.active { border-color: var(--green-650); box-shadow: 0 0 0 3px rgba(21,147,107,.10); }
+.bell-card h3 { margin: 0; padding: 15px 17px; color: var(--green-950); background: var(--mint); font-size: 15px; }
+.bell-table { width: 100%; border-collapse: collapse; }
+.bell-table th, .bell-table td { padding: 10px 12px; border-top: 1px solid var(--line); font-size: 12px; }
+.bell-table th { color: var(--muted); font-size: 10px; text-align: left; text-transform: uppercase; letter-spacing: .05em; }
+.bell-table td:first-child { width: 42px; color: var(--green-800); font-weight: 850; }
+.bell-table td:nth-child(2) { font-weight: 750; }
+.bell-table td:last-child { color: var(--muted); text-align: right; }
 footer { padding: 28px 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; text-align: center; }
 .error-toast { position: fixed; right: 20px; bottom: 20px; max-width: 340px; padding: 16px 18px; border-radius: 14px; color: white; background: #a63737; box-shadow: 0 14px 40px rgba(80,0,0,.25); }
 
@@ -118,7 +136,11 @@ footer { padding: 28px 16px; border-top: 1px solid var(--line); color: var(--mut
   .class-meta { text-align: left; }
   .lesson-list { padding: 5px 16px 12px; }
   .lesson { grid-template-columns: 42px 1fr; gap: 12px; }
-  .lesson-badge { display: none; }
+  .lesson-time { min-width: auto; }
+  .lesson-time strong { font-size: 12px; }
+  .lesson-time small { display: none; }
+  .bell-panel { margin-top: 22px; padding: 18px 13px; border-radius: 20px; }
+  .bell-grid { grid-template-columns: 1fr; }
 }
 
 @media print {
@@ -132,4 +154,5 @@ footer { padding: 28px 16px; border-top: 1px solid var(--line); color: var(--mut
   .schedule-heading { color: black; background: white; border-bottom: 2px solid #222; }
   .selected-shift, .class-meta { color: #444; }
   .class-meta strong { color: black; }
+  .bell-panel { break-before: page; box-shadow: none; }
 }
