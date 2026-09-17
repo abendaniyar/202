@@ -143,7 +143,7 @@ async function init() {
   setTodayLabel();
   state.day = currentSchoolDay();
   try {
-    const response = await fetch("schedule-data.json", { cache: "no-store" });
+    const response = await fetch("schedule-data.json?v=20260917-2", { cache: "no-store" });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     state.data = await response.json();
     updateAll();
