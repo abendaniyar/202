@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b6e4f">
+  <meta name="description" content="№202 мектеп-гимназиясының 2026 оқу жылына арналған сабақ кестесі">
+  <title>Сабақ кестесі — №202 мектеп-гимназия</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="./" aria-label="Басты бет">
+        <span class="brand-mark">202</span>
+        <span><strong>№202 мектеп-гимназия</strong><small>Сабақ кестесі · Расписание уроков</small></span>
+      </a>
+      <button class="print-button" id="printButton" type="button" aria-label="Кестені басып шығару">
+        <span aria-hidden="true">⎙</span> Басып шығару
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="pageTitle">
+      <div>
+        <p class="eyebrow">2026 оқу жылы</p>
+        <h1 id="pageTitle">Бүгінгі сабақ кестесі</h1>
+        <p class="hero-copy">Сменаны, сыныпты және аптаның күнін таңдаңыз.</p>
+      </div>
+      <div class="today-card" aria-live="polite">
+        <span>Бүгін</span>
+        <strong id="todayLabel">—</strong>
+      </div>
+    </section>
+
+    <section class="controls-card" aria-label="Кесте сүзгілері">
+      <div class="shift-picker" role="group" aria-label="Смена">
+        <button class="shift-button active" type="button" data-shift="1">1-ауысым <small>8–11 сынып</small></button>
+        <button class="shift-button" type="button" data-shift="2">2-ауысым <small>5–7 сынып</small></button>
+      </div>
+      <label class="select-field">
+        <span>Сынып / Класс</span>
+        <select id="classSelect" aria-label="Сыныпты таңдаңыз"></select>
+      </label>
+    </section>
+
+    <nav class="day-tabs" id="dayTabs" aria-label="Апта күндері"></nav>
+
+    <section class="schedule-panel" aria-live="polite" aria-busy="true">
+      <div class="schedule-heading">
+        <div>
+          <p class="selected-shift" id="selectedShift">—</p>
+          <h2 id="scheduleTitle">Кесте жүктелуде…</h2>
+        </div>
+        <div class="class-meta" id="classMeta"></div>
+      </div>
+      <ol class="lesson-list" id="lessonList"></ol>
+      <div class="empty-state" id="emptyState" hidden>
+        <span>✓</span>
+        <strong>Бұл күні сабақ жоқ</strong>
+      </div>
+    </section>
+
+    <p class="source-note">Кесте мектеп ұсынған 1 және 2 ауысым файлдары негізінде жасалды. Өзгерістер болған жағдайда сынып жетекшісінен нақтылаңыз.</p>
+  </main>
+
+  <footer>№202 мектеп-гимназия · 2026</footer>
+
+  <div class="error-toast" id="errorToast" role="alert" hidden>Кестені жүктеу мүмкін болмады. Бетті жаңартып көріңіз.</div>
+</body>
+</html>
